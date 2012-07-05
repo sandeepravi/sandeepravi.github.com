@@ -14,7 +14,9 @@ Thereâ€™s a cool feature implemented in Rails 3.1. You can now have a **nested â
     class User < ActiveRecord::Base
       has_many :memberships
       has_many :organizations, :through => :memberships
-      has_many :deals, :through => :organizations # => This is not possible in Rails < 3.1
+
+      # => This is not possible in Rails < 3.1
+      has_many :deals, :through => :organizations
 
      def has_deals?
        self.deals.any?
