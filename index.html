@@ -4,10 +4,13 @@ title: Sandeep Ravichandran
 ---
 
 <div id="home">
-  <h1>Blog Posts</h1>
-  <ul class="posts">
-    {% for post in site.posts %}
-      <li><span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ post.url }}">{{ post.title }}</a></li>
+  <!--<h1>Blog Posts</h1> -->
+  <div class="posts">
+    {% for post in site.posts reverse limit: 3 %}
+    <div class="post_info">
+      {{ post.content | replace: "more start -->","" | replace: "<!-- more end","" }}
+      <p><a href="{{ post.url }}">Continue Reading...</a></p>
+    </div>
     {% endfor %}
-  </ul>
+  </div>
 </div>
