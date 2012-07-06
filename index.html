@@ -6,7 +6,7 @@ title: Sandeep Ravichandran
 <div id="home">
   <!--<h1>Blog Posts</h1> -->
   <div class="posts">
-    {% for post in site.posts reverse limit: 3 %}
+    {% for post in site.posts reverse limit: 5 %}
     <div class="post_info">
       {{ post.content | replace: "more start -->","" | replace: "<!-- more end","" }}
       <p><a href="{{ post.url }}">Continue Reading...</a></p>
